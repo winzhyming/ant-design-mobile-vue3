@@ -1,0 +1,61 @@
+{
+  "name": "ant-design-mobile-vue3",
+  "version": "1.0.0",
+  "author": "zhangyanming",
+  "description": "A mobile Ant Design UI library based on Vue 3",
+  "keywords": [
+    "ant-design",
+    "ant-design-mobile",
+    "vue3",
+    "mobile-ui",
+    "ui-library"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/winzhyming/ant-design-mobile-vue3.git"
+  },
+  "license": "MIT",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.0"
+  },
+  "dependencies": {
+    "@antv/g2": "^5.3.5",
+    "@antv/g2plot": "^2.4.33",
+    "@floating-ui/dom": "^1.7.3",
+    "@rc-component/mini-decimal": "^1.1.0",
+    "ant-mobile-icons-vue3": "^1.0.1",
+    "classnames": "^2.3.2",
+    "dayjs": "^1.11.7",
+    "lorem-ipsum": "^2.0.8",
+    "runes2": "^1.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "@vitejs/plugin-vue": "^5.1.0",
+    "less": "^4.3.0",
+    "less-loader": "^12.3.0",
+    "typescript": "~5.8.0",
+    "vite": "^5.4.0",
+    "vite-plugin-dts": "^4.0.0",
+    "vue": "^3.5.17"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./dist/index.css": "./dist/index.css"
+  }
+}

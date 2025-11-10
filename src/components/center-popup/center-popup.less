@@ -1,0 +1,58 @@
+@class-prefix-center-popup: ~'adm-center-popup';
+
+.@{class-prefix-center-popup} {
+  --background-color: var(--adm-center-popup-background-color, var(--adm-color-background));
+  --border-radius: var(--adm-center-popup-border-radius, 8px);
+  --max-width: var(--adm-center-popup-max-width, 75vw);
+  --min-width: var(--adm-center-popup-min-width, 280px);
+  --z-index: var(--adm-center-popup-z-index, 1000);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-index);
+
+  .@{class-prefix-center-popup}-mask {
+    z-index: 0;
+  }
+
+  &-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+
+    > div {
+      pointer-events: auto;
+      background: var(--background-color);
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      max-width: 90vw;
+      max-height: 90vh;
+      min-width: 280px;
+    }
+  }
+
+  &-body {
+    padding: 16px 24px;
+  }
+}
+
+.@{class-prefix-center-popup}-close {
+  position: absolute;
+  z-index: 100;
+  right: 8px;
+  top: 8px;
+
+  cursor: pointer;
+  padding: 4px;
+  font-size: 18px;
+  color: var(--adm-color-weak);
+}

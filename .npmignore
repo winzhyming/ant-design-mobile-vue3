@@ -1,0 +1,31 @@
+# 源代码
+src/
+index.ts
+vite.config.ts
+tsconfig.json
+
+# 开发文件
+node_modules/
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 测试文件
+__tests__/
+*.test.ts
+*.test.js
+*.spec.ts
+*.spec.js
+
+# 其他
+.DS_Store
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
