@@ -1,6 +1,6 @@
 {
   "name": "ant-design-mobile-vue3",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "zhangyanming",
   "description": "A mobile Ant Design UI library based on Vue 3",
   "keywords": [
@@ -34,7 +34,7 @@
     "@antv/g2plot": "^2.4.33",
     "@floating-ui/dom": "^1.7.3",
     "@rc-component/mini-decimal": "^1.1.0",
-    "ant-mobile-icons-vue3": "^1.0.1",
+    "ant-mobile-icons-vue3": "^1.0.2",
     "classnames": "^2.3.2",
     "dayjs": "^1.11.7",
     "lorem-ipsum": "^2.0.8",

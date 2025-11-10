@@ -1,5 +1,5 @@
 import type { CSSProperties, Component } from 'vue'
-import { CloseOutline } from 'ant-mobile-icons'
+import { CloseOutline } from 'ant-mobile-icons-vue3'
 
 // 内容类型定义
 // 获取容器类型定义

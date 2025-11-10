@@ -5,7 +5,7 @@ import {
   InformationCircleFill,
   ClockCircleFill,
   ExclamationCircleFill,
-} from 'ant-mobile-icons'
+} from 'ant-mobile-icons-vue3'
 import { useConfig } from '../config-provider/useConfig'
 
 export type ResultStatus = 'success' | 'error' | 'info' | 'waiting' | 'warning'
