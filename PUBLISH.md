@@ -55,8 +55,11 @@ npm run build
 - index.cjs (CommonJS)
 - global.mjs (全局样式入口)
 - global.cjs (全局样式入口)
+- locales/*.mjs (多语言入口)
+- locales/*.cjs (多语言入口)
 - index.css (样式文件)
 - index.d.ts、global.d.ts (TypeScript 类型定义)
+- locales/*.d.ts (多语言类型定义)
 - src/ (类型定义源文件)
 
 ### 5. 测试包（可选）
@@ -107,7 +110,8 @@ npm install ant-design-mobile-vue3
 3. 建议使用语义化版本号
 4. 发布前可以使用 `npm pack` 预览将要发布的内容
 5. 在测试项目中确认 `import 'ant-design-mobile-vue3/global'` 能够正确引入全局样式与 px 测试器
-6. 如果需要撤销发布（24小时内）：`npm unpublish ant-design-mobile-vue3@版本号`
+6. 在测试项目中确认 `import zhCN from 'ant-design-mobile-vue3/locales/zh-CN'` 能够正常获取语言包
+7. 如果需要撤销发布（24小时内）：`npm unpublish ant-design-mobile-vue3@版本号`
 
 ## 常见问题
 

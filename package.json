@@ -1,6 +1,6 @@
 {
   "name": "ant-design-mobile-vue3",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "zhangyanming",
   "description": "A mobile Ant Design UI library based on Vue 3",
   "keywords": [
@@ -60,6 +60,11 @@
       "types": "./dist/global.d.ts",
       "import": "./dist/global.mjs",
       "require": "./dist/global.cjs"
+    },
+    "./locales/*": {
+      "types": "./dist/locales/*.d.ts",
+      "import": "./dist/locales/*.mjs",
+      "require": "./dist/locales/*.cjs"
     },
     "./dist/index.css": "./dist/index.css"
   }

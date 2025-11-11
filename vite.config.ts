@@ -1,11 +1,25 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import { readdirSync } from 'fs'
 import { resolve } from 'path'
 import dts from 'vite-plugin-dts'
+
+function createLocaleEntries() {
+  const localeDir = resolve(__dirname, 'src/locales')
+  return Object.fromEntries(
+    readdirSync(localeDir)
+      .filter((file) => file.endsWith('.ts'))
+      .map((file) => {
+        const entryName = file.replace(/\.ts$/, '')
+        return [`locales/${entryName}`, resolve(localeDir, file)]
+      })
+  )
+}
 
 const libEntry = {
   index: resolve(__dirname, 'index.ts'),
   global: resolve(__dirname, 'src/global/index.ts'),
+  ...createLocaleEntries(),
 }
 
 export default defineConfig({
@@ -27,7 +41,8 @@ export default defineConfig({
       formats: ['es', 'cjs'],
       fileName: (format, entryName) => {
         const ext = format === 'es' ? 'mjs' : 'cjs'
-        return `${entryName}.${ext}`
+        const normalizedEntry = entryName.replace(/\\/g, '/')
+        return `${normalizedEntry}.${ext}`
       },
     },
     rollupOptions: {

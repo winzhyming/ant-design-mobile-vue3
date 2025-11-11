@@ -63,6 +63,17 @@ import 'ant-design-mobile-vue3/dist/index.css'
 
 > ℹ️ Import `ant-design-mobile-vue3/global` **once** in your app entry to enable responsive px conversion and global styles.
 
+### Locales
+
+```ts
+import zhCN from 'ant-design-mobile-vue3/locales/zh-CN'
+import enUS from 'ant-design-mobile-vue3/locales/en-US'
+
+console.log(zhCN, enUS)
+```
+
+All locale files from `src/locales` are bundled as individual entry points, so you can import only what you need.
+
 ## Components
 
 This library includes the following components:
