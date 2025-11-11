@@ -28,9 +28,11 @@ pnpm add ant-design-mobile-vue3
 import { createApp } from 'vue'
 import App from './App.vue'
 
+// Import global behaviors & CSS variables (px tester, body styles, etc.)
+import 'ant-design-mobile-vue3/global'
 // Import all components
 import * as AntMobile from 'ant-design-mobile-vue3'
-// Import styles
+// Import component styles
 import 'ant-design-mobile-vue3/dist/index.css'
 
 const app = createApp(App)
@@ -54,9 +56,12 @@ app.mount('#app')
 
 <script setup lang="ts">
 import { Button } from 'ant-design-mobile-vue3'
+import 'ant-design-mobile-vue3/global'
 import 'ant-design-mobile-vue3/dist/index.css'
 </script>
 ```
+
+> ℹ️ Import `ant-design-mobile-vue3/global` **once** in your app entry to enable responsive px conversion and global styles.
 
 ## Components
 

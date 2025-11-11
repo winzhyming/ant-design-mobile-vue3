@@ -3,6 +3,11 @@ import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 import dts from 'vite-plugin-dts'
 
+const libEntry = {
+  index: resolve(__dirname, 'index.ts'),
+  global: resolve(__dirname, 'src/global/index.ts'),
+}
+
 export default defineConfig({
   plugins: [
     vue(),
@@ -17,10 +22,13 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      entry: resolve(__dirname, 'index.ts'),
+      entry: libEntry,
       name: 'AntDesignMobileVue3',
       formats: ['es', 'cjs'],
-      fileName: (format) => `index.${format === 'es' ? 'mjs' : 'cjs'}`,
+      fileName: (format, entryName) => {
+        const ext = format === 'es' ? 'mjs' : 'cjs'
+        return `${entryName}.${ext}`
+      },
     },
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖
@@ -46,10 +54,11 @@ export default defineConfig({
         preserveModules: false,
         exports: 'named',
         assetFileNames: (assetInfo) => {
+          if (!assetInfo.name) return '[name][extname]'
           if (assetInfo.name === 'style.css') {
             return 'index.css'
           }
-          return assetInfo.name || ''
+          return assetInfo.name
         },
       },
     },

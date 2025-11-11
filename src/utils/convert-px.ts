@@ -17,7 +17,7 @@ if (canUseDom) {
     if (window.getComputedStyle(tester).position !== 'fixed') {
       devError(
         'Global',
-        'The px tester is not rendering properly. Please make sure you have imported `antd-mobile/es/global`.'
+        'The px tester is not rendering properly. Please make sure you have imported `ant-design-mobile-vue3/global`.'
       )
     }
   }

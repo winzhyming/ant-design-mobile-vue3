@@ -4,7 +4,7 @@
 
 1. ✅ 已配置 `package.json` 的基本信息
    - name: ant-design-mobile-vue3
-   - version: 1.0.0
+   - version: 1.0.1
    - description: A mobile Ant Design UI library based on Vue 3
    - author: zhangyanming
    - license: MIT
@@ -32,13 +32,13 @@ npm login
 如果需要更新版本号：
 
 ```bash
-# 补丁版本 (1.0.0 -> 1.0.1)
+# 补丁版本 (1.0.1 -> 1.0.2)
 npm version patch
 
-# 次要版本 (1.0.0 -> 1.1.0)
+# 次要版本 (1.0.1 -> 1.1.0)
 npm version minor
 
-# 主要版本 (1.0.0 -> 2.0.0)
+# 主要版本 (1.0.1 -> 2.0.0)
 npm version major
 ```
 
@@ -53,8 +53,10 @@ npm run build
 确保 `dist` 目录包含以下文件：
 - index.mjs (ES Module)
 - index.cjs (CommonJS)
+- global.mjs (全局样式入口)
+- global.cjs (全局样式入口)
 - index.css (样式文件)
-- index.d.ts (TypeScript 类型定义)
+- index.d.ts、global.d.ts (TypeScript 类型定义)
 - src/ (类型定义源文件)
 
 ### 5. 测试包（可选）
@@ -68,7 +70,7 @@ npm pack
 这会生成一个 `.tgz` 文件，你可以在其他项目中安装测试：
 
 ```bash
-npm install /path/to/ant-design-mobile-vue3-1.0.0.tgz
+npm install /path/to/ant-design-mobile-vue3-1.0.1.tgz
 ```
 
 ### 6. 发布到 npm
@@ -104,7 +106,8 @@ npm install ant-design-mobile-vue3
 2. 发布前确保所有测试通过
 3. 建议使用语义化版本号
 4. 发布前可以使用 `npm pack` 预览将要发布的内容
-5. 如果需要撤销发布（24小时内）：`npm unpublish ant-design-mobile-vue3@版本号`
+5. 在测试项目中确认 `import 'ant-design-mobile-vue3/global'` 能够正确引入全局样式与 px 测试器
+6. 如果需要撤销发布（24小时内）：`npm unpublish ant-design-mobile-vue3@版本号`
 
 ## 常见问题
 

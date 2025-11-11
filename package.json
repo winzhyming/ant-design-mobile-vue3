@@ -56,6 +56,11 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     },
+    "./global": {
+      "types": "./dist/global.d.ts",
+      "import": "./dist/global.mjs",
+      "require": "./dist/global.cjs"
+    },
     "./dist/index.css": "./dist/index.css"
   }
 }
